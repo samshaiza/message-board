@@ -30,30 +30,33 @@ export default function MessageForm() {
       setUser("");
       setText("");
       setError(null);
-      dispatch({ type: "CREATE_WORKOUT", payload: json });
+      dispatch({ type: "CREATE_MESSAGE", payload: json });
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <h3>new message...</h3>
-      <label></label>
-      <input
-        className=""
-        onChange={(e) => {
-          setUser(e.target.value);
-        }}
-        type="text"
-        value={user}
-      />
-      <input
-        className=""
-        onChange={(e) => {
-          setText(e.target.value);
-        }}
-        type="text"
-        value={text}
-      />
-      <button>Enter</button>
-    </form>
+    <div className="container my-4">
+      <form onSubmit={handleSubmit} className="input-group ">
+        <label></label>
+        <input
+          className="form-control"
+          onChange={(e) => {
+            setUser(e.target.value);
+          }}
+          type="text"
+          placeholder="username..."
+          value={user}
+        />
+        <input
+          className="form-control"
+          onChange={(e) => {
+            setText(e.target.value);
+          }}
+          placeholder="new message..."
+          type="text"
+          value={text}
+        />
+        <button className="btn">Enter</button>
+      </form>
+    </div>
   );
 }

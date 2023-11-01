@@ -3,7 +3,7 @@ import Board from "./pages/Board";
 
 function App() {
   return (
-    <div>
+    <div className="container-md">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Board />} />

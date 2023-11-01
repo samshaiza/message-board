@@ -21,7 +21,8 @@ export default function Board() {
   return (
     <div>
       <div>
-        {messages && messages.map((m) => <Message key={m._id} message={m} />)}
+        {messages &&
+          messages.toReversed().map((m) => <Message key={m._id} message={m} />)}
       </div>
       <div>
         <MessageForm />
