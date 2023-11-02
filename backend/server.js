@@ -6,6 +6,7 @@ const app = express();
 const cors = require("cors");
 
 const messageRoutes = require("./routes/messages");
+const userRoutes = require("./routes/user");
 
 // middleware
 
@@ -16,7 +17,10 @@ app.use((req, res, next) => {
   next();
 });
 
+// routes
+
 app.use("/api/messages", messageRoutes);
+app.use("/api/users", userRoutes);
 
 mongoose
   .connect(process.env.MONGO_URI)
