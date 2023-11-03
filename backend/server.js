@@ -9,7 +9,6 @@ const messageRoutes = require("./routes/messages");
 const userRoutes = require("./routes/user");
 
 // middleware
-
 app.use(express.json());
 app.use(cors());
 app.use((req, res, next) => {
@@ -18,7 +17,6 @@ app.use((req, res, next) => {
 });
 
 // routes
-
 app.use("/api/messages", messageRoutes);
 app.use("/api/users", userRoutes);
 
